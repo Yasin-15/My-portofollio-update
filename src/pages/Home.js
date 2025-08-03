@@ -11,7 +11,7 @@ const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   
-  const texts = ['Full Stack Developer', 'React Specialist', 'Node.js Expert', 'UI/UX Designer'];
+  const texts = ['Full Web Stack Developer', 'React Specialist', 'Node.js Expert', 'UI/UX Designer'];
   const currentFullText = texts[currentIndex];
 
   useEffect(() => {
