@@ -78,7 +78,7 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 text-gray-600 dark:text-gray-400">
                   <p>
-                    I&apos;m a dedicated full-stack developer with over 4 years of experience in creating 
+                    I&apos;m a dedicated full-stack developer with over 2+ years of experience in creating 
                     exceptional digital experiences. My journey in web development started with a curiosity 
                     about how things work on the internet, which has evolved into a passion for building 
                     innovative solutions.
