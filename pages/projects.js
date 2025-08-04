@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
-import { FiGithub, FiExternalLink, FiFilter } from 'react-icons/fi';
+import Head from 'next/head';
+import Link from 'next/link';
+import { FiGithub, FiExternalLink } from 'react-icons/fi';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
@@ -109,10 +110,10 @@ const Projects = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Projects - Your Name</title>
+      <Head>
+        <title>Projects - Yaasiin Dev</title>
         <meta name="description" content="Explore my latest projects showcasing web development skills and innovative solutions." />
-      </Helmet>
+      </Head>
 
       <div className="section-padding pt-24">
         <div className="container-custom">
@@ -121,7 +122,6 @@ const Projects = () => {
             initial="hidden"
             animate="visible"
           >
-            {/* Header */}
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                 My Projects
@@ -131,7 +131,6 @@ const Projects = () => {
               </p>
             </motion.div>
 
-            {/* Filter Buttons */}
             <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-12">
               {categories.map((category) => (
                 <button
@@ -148,7 +147,6 @@ const Projects = () => {
               ))}
             </motion.div>
 
-            {/* Projects Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <AnimatePresence mode="wait">
                 {filteredProjects.map((project) => (
@@ -161,7 +159,6 @@ const Projects = () => {
                     transition={{ duration: 0.3 }}
                     className="project-card group"
                   >
-                    {/* Project Image */}
                     <div className="relative overflow-hidden">
                       <img
                         src={project.image}
@@ -176,7 +173,6 @@ const Projects = () => {
                       )}
                     </div>
 
-                    {/* Project Content */}
                     <div className="p-6">
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                         {project.title}
@@ -185,7 +181,6 @@ const Projects = () => {
                         {project.description}
                       </p>
 
-                      {/* Tech Stack */}
                       <div className="flex flex-wrap gap-2 mb-6">
                         {project.tech.map((tech, index) => (
                           <span
@@ -197,7 +192,6 @@ const Projects = () => {
                         ))}
                       </div>
 
-                      {/* Project Links */}
                       <div className="flex gap-4">
                         <a
                           href={project.github}
@@ -224,17 +218,15 @@ const Projects = () => {
               </AnimatePresence>
             </div>
 
-            {/* Call to Action */}
             <motion.div variants={itemVariants} className="text-center mt-16">
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
                 Interested in working together? Let's discuss your project!
               </p>
-              <a
-                href="/contact"
-                className="btn-primary"
-              >
-                Get In Touch
-              </a>
+              <Link href="/contact">
+                <button className="btn-primary">
+                  Get In Touch
+                </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -243,4 +235,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;

@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
-import { FiArrowRight, FiGithub, FiLinkedin, FiTwitter, FiCode, FiDatabase, FiSmartphone, FiGlobe } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
-// Import your profile image - replace 'profile.jpg' with your actual image filename
-import profileImage from '../assets/profile.jpg';
+import Head from 'next/head';
+import Link from 'next/link';
+import { FiArrowRight, FiGithub, FiLinkedin, FiCode, FiDatabase, FiSmartphone, FiGlobe } from 'react-icons/fi';
+// Profile image is now in public directory
 
 const Home = () => {
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   
-  const texts = ['Full Web Stack Developer', 'React Specialist', 'Node.js Expert', 'UI/UX Designer'];
+  const texts = ['Full Stack Web Developer', 'React Specialist', 'Node.js Expert', 'UI/UX Designer'];
   const currentFullText = texts[currentIndex];
 
   useEffect(() => {
@@ -69,10 +68,10 @@ const Home = () => {
 
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Yaasiin - Full Stack Developer</title>
         <meta name="description" content="Professional full-stack developer specializing in React, Node.js, and modern web technologies. View my portfolio and projects." />
-      </Helmet>
+      </Head>
 
       <div className="min-h-screen flex items-center justify-center pt-16">
         <div className="container-custom">
@@ -94,14 +93,12 @@ const Home = () => {
                 >
                   <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary-500 dark:border-primary-400 shadow-2xl relative">
                     <img
-                      src={profileImage}
+                      src="/profile.jpg"
                       alt="Yaasiin Mohamuud - Full Stack Developer"
                       className="w-full h-full object-cover"
                     />
-                    {/* Gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   </div>
-                  {/* Enhanced decorative elements */}
                   <motion.div 
                     className="absolute -top-2 -right-2 w-6 h-6 bg-primary-500 dark:bg-primary-400 rounded-full"
                     animate={{ scale: [1, 1.2, 1] }}
@@ -112,7 +109,6 @@ const Home = () => {
                     animate={{ scale: [1, 1.3, 1] }}
                     transition={{ duration: 2.5, repeat: Infinity }}
                   ></motion.div>
-                  {/* Floating elements */}
                   <motion.div 
                     className="absolute top-4 -left-4 w-3 h-3 bg-yellow-400 rounded-full"
                     animate={{ y: [0, -10, 0] }}
@@ -126,7 +122,6 @@ const Home = () => {
                 variants={containerVariants}
                 className="text-center lg:text-left flex-1"
               >
-                {/* Greeting */}
                 <motion.p
                   variants={itemVariants}
                   className="text-lg md:text-xl text-primary-600 dark:text-primary-400 font-medium mb-4"
@@ -134,7 +129,6 @@ const Home = () => {
                   Hello, I'm
                 </motion.p>
 
-                {/* Name */}
                 <motion.h1
                   variants={itemVariants}
                   className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6"
@@ -142,7 +136,6 @@ const Home = () => {
                   Yaasiin <span className="text-cyan-500 dark:text-primary-400">Dev</span>
                 </motion.h1>
 
-                {/* Animated Title */}
                 <motion.h2
                   variants={itemVariants}
                   className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300 mb-8 min-h-[3rem] flex items-center justify-center lg:justify-start"
@@ -153,7 +146,6 @@ const Home = () => {
                   </span>
                 </motion.h2>
 
-                {/* Description */}
                 <motion.p
                   variants={itemVariants}
                   className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl leading-relaxed"
@@ -162,7 +154,6 @@ const Home = () => {
                   Passionate about creating innovative solutions that make a difference in people's lives.
                 </motion.p>
 
-                {/* Skill Badges */}
                 <motion.div
                   variants={itemVariants}
                   className="flex flex-wrap gap-2 mb-8 justify-center lg:justify-start"
@@ -180,12 +171,11 @@ const Home = () => {
                   ))}
                 </motion.div>
 
-                {/* CTA Buttons */}
                 <motion.div
                   variants={itemVariants}
                   className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12"
                 >
-                  <Link to="/projects">
+                  <Link href="/projects">
                     <motion.button
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
@@ -196,7 +186,7 @@ const Home = () => {
                     </motion.button>
                   </Link>
                   
-                  <Link to="/contact">
+                  <Link href="/contact">
                     <motion.button
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
@@ -207,7 +197,6 @@ const Home = () => {
                   </Link>
                 </motion.div>
 
-                {/* Social Links */}
                 <motion.div
                   variants={itemVariants}
                   className="flex justify-center lg:justify-start space-x-6"
@@ -237,10 +226,9 @@ const Home = () => {
               </motion.div>
             </div>
 
-            {/* Statistics Section */}
             <motion.div
               variants={itemVariants}
-              className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
+              className="mt-20 mb-10 grid grid-cols-2 md:grid-cols-4 gap-6"
             >
               {stats.map((stat, index) => (
                 <motion.div
@@ -269,4 +257,4 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default Home;

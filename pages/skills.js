@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import Head from 'next/head';
 
 const Skills = () => {
   const containerVariants = {
@@ -49,7 +49,6 @@ const Skills = () => {
         { name: 'PostgreSQL', level: 80 },
         { name: 'C#', level: 80 },
         { name: 'Java', level: 80 },
-
         { name: 'MongoDB', level: 75 },
         { name: 'REST APIs', level: 90 },
       ],
@@ -88,10 +87,10 @@ const Skills = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Skills - Your Name</title>
+      <Head>
+        <title>Skills - Yaasiin Dev</title>
         <meta name="description" content="Explore my technical skills and expertise in frontend, backend, and DevOps technologies." />
-      </Helmet>
+      </Head>
 
       <div className="section-padding pt-24">
         <div className="container-custom">
@@ -100,7 +99,6 @@ const Skills = () => {
             initial="hidden"
             animate="visible"
           >
-            {/* Header */}
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                 Skills & Expertise
@@ -110,7 +108,6 @@ const Skills = () => {
               </p>
             </motion.div>
 
-            {/* Skill Categories */}
             <div className="grid lg:grid-cols-2 gap-8 mb-16">
               {skillCategories.map((category, categoryIndex) => (
                 <motion.div
@@ -151,7 +148,6 @@ const Skills = () => {
               ))}
             </div>
 
-            {/* Technologies Grid */}
             <motion.div variants={itemVariants} className="mb-16">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
                 Technologies I Work With
@@ -174,7 +170,6 @@ const Skills = () => {
               </div>
             </motion.div>
 
-            {/* Additional Skills */}
             <motion.div variants={itemVariants} className="grid md:grid-cols-3 gap-8">
               <div className="text-center p-6 bg-white dark:bg-dark-800 rounded-xl shadow-md">
                 <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -219,4 +214,4 @@ const Skills = () => {
   );
 };
 
-export default Skills; 
+export default Skills;

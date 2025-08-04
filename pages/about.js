@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
-import { FiDownload, FiCalendar, FiMapPin, FiMail, FiGithub, FiLinkedin, FiGlobe, FiAward, FiBookOpen } from 'react-icons/fi';
+import Head from 'next/head';
+import { FiDownload, FiCalendar, FiMapPin, FiMail, FiAward } from 'react-icons/fi';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('experience');
@@ -37,7 +37,7 @@ const About = () => {
     },
     {
       year: '2025 - 2025',
-      title: 'Full Stack Developer  Hospital Management System',
+      title: 'Full Stack Developer Hospital Management System',
       company: 'Defence Final Project',
       description: 'Built and maintained multiple web applications, focusing on user experience and performance optimization. Collaborated with cross-functional teams.',
       technologies: ['React', 'Express.js', 'PostgreSQL', 'Docker', 'Java','Spring Boot'],
@@ -57,7 +57,7 @@ const About = () => {
       degree: 'Bachelor of Computer Science',
       institution: 'Jamhuuriya University of Science and Technology',
       description: 'Specialized in Computer Application.',
-  
+      gpa: 'B+',
     },
     {
       year: '2018 - 2022',
@@ -82,7 +82,7 @@ const About = () => {
     { name: 'Adobe Photoshop', percentage: 80 },
     { name: 'Adobe Illustrator', percentage: 80 },
     { name: 'C#', percentage: 80 },
-    { name: 'Java ', percentage: 80 },
+    { name: 'Java', percentage: 80 },
     { name: 'Python', percentage: 80 },
     { name: 'MongoDB', percentage: 85 },
     { name: 'PostgreSQL', percentage: 80 },
@@ -97,13 +97,13 @@ const About = () => {
       year: '2024',
     },
     {
-      icon: FiGlobe,
+      icon: FiAward,
       title: '10+ Projects Completed',
       description: 'Successfully delivered projects for clients worldwide',
       year: '2024',
     },
     {
-      icon: FiGithub,
+      icon: FiAward,
       title: '100+ GitHub Stars',
       description: 'Open-source contributions and community recognition',
       year: '2024',
@@ -112,10 +112,10 @@ const About = () => {
 
   return (
     <>
-      <Helmet>
+      <Head>
         <title>About - Yaasiin Dev</title>
         <meta name="description" content="Learn more about Yaasiin Dev, a passionate full-stack developer with expertise in modern web technologies." />
-      </Helmet>
+      </Head>
 
       <div className="section-padding pt-24">
         <div className="container-custom">
@@ -124,7 +124,6 @@ const About = () => {
             initial="hidden"
             animate="visible"
           >
-            {/* Header */}
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                 About Me
@@ -135,7 +134,6 @@ const About = () => {
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-start">
-              {/* Personal Info */}
               <motion.div variants={itemVariants}>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                   Who I Am
@@ -159,7 +157,6 @@ const About = () => {
                   </p>
                 </div>
 
-                {/* Personal Details */}
                 <div className="mt-8 space-y-3">
                   <div className="flex items-center space-x-3">
                     <FiMapPin className="w-5 h-5 text-primary-600 dark:text-primary-400" />
@@ -175,7 +172,6 @@ const About = () => {
                   </div>
                 </div>
 
-                {/* Download CV Button */}
                 <div className="mt-8 space-y-4">
                   <motion.a
                     href="https://drive.google.com/file/d/1EwbOVC9FERRxF8n-mIhVjiElwdKupK57/view?usp=drive_link"
@@ -188,30 +184,9 @@ const About = () => {
                     <FiDownload className="mr-2 w-5 h-5 group-hover:animate-bounce" />
                     Download CV (Google Drive)
                   </motion.a>
-                  
-                  {/* Alternative local CV option */}
-                 {/* <motion.a
-                    href="/Yaasiin_Mohamuud_CV.pdf"
-                    download="Yaasiin_Mohamuud_CV.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="btn-secondary group inline-flex items-center"
-                  >
-                    <FiDownload className="mr-2 w-5 h-5 group-hover:animate-bounce" />
-                    Download CV (Local)
-                  </motion.a>  */}
-                  
-                  {/* <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                    💡 <strong>Setup Instructions:</strong><br/>
-                    1. For Google Drive: Replace "YOUR_CV_FILE_ID" with your actual Google Drive file ID<br/>
-                    2. For Local: Place your CV as "Yaasiin_Mohamuud_CV.pdf" in the public folder
-                  </p> */}
                 </div>
               </motion.div>
 
-              {/* Tab Navigation */}
               <motion.div variants={itemVariants}>
                 <div className="flex space-x-4 mb-6">
                   <button
@@ -236,7 +211,6 @@ const About = () => {
                   </button>
                 </div>
 
-                {/* Experience Timeline */}
                 {activeTab === 'experience' && (
                   <motion.div
                     initial={{ opacity: 0, x: 20 }}
@@ -286,7 +260,6 @@ const About = () => {
                   </motion.div>
                 )}
 
-                {/* Education Timeline */}
                 {activeTab === 'education' && (
                   <motion.div
                     initial={{ opacity: 0, x: 20 }}
@@ -331,7 +304,6 @@ const About = () => {
               </motion.div>
             </div>
 
-            {/* Skills Section */}
             <motion.div variants={itemVariants} className="mt-16">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
                 Technical Skills
@@ -362,7 +334,6 @@ const About = () => {
               </div>
             </motion.div>
 
-            {/* Achievements Section */}
             <motion.div variants={itemVariants} className="mt-16">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
                 Achievements & Recognition
@@ -392,59 +363,6 @@ const About = () => {
                 ))}
               </div>
             </motion.div>
-
-            {/* What I Do Section */}
-            <motion.div variants={itemVariants} className="mt-16">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-                What I Do
-              </h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                <motion.div 
-                  className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🎨</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    Frontend Development
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    Creating responsive and interactive user interfaces with modern frameworks and tools.
-                  </p>
-                </motion.div>
-                
-                <motion.div 
-                  className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">⚙️</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    Backend Development
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    Building robust APIs and server-side applications with scalable architectures.
-                  </p>
-                </motion.div>
-                
-                <motion.div 
-                  className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🚀</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    DevOps & Deployment
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    Managing cloud infrastructure and implementing CI/CD pipelines for seamless deployments.
-                  </p>
-                </motion.div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -452,4 +370,4 @@ const About = () => {
   );
 };
 
-export default About; 
+export default About;

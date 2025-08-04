@@ -11,17 +11,25 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    
     // Check localStorage for saved preference
     const saved = localStorage.getItem('darkMode');
     if (saved !== null) {
-      return JSON.parse(saved);
+      setIsDarkMode(JSON.parse(saved));
+    } else {
+      // Check system preference
+      setIsDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
-    // Check system preference
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  });
+  }, []);
 
   useEffect(() => {
+    if (!mounted) return;
+    
     // Save preference to localStorage
     localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
     
@@ -31,7 +39,7 @@ export const ThemeProvider = ({ children }) => {
     } else {
       document.documentElement.classList.remove('dark');
     }
-  }, [isDarkMode]);
+  }, [isDarkMode, mounted]);
 
   const toggleTheme = () => {
     setIsDarkMode(prev => !prev);
@@ -40,7 +48,17 @@ export const ThemeProvider = ({ children }) => {
   const value = {
     isDarkMode,
     toggleTheme,
+    mounted,
   };
+
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return (
+      <ThemeContext.Provider value={value}>
+        {children}
+      </ThemeContext.Provider>
+    );
+  }
 
   return (
     <ThemeContext.Provider value={value}>

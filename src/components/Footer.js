@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiTwitter, FiHeart } from 'react-icons/fi';
 
@@ -38,7 +38,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <Link to="/" className="inline-block">
+            <Link href="/" className="inline-block">
               <h3 className="text-2xl font-bold gradient-text">Yaasiin <span className="text-cyan-500 dark:text-primary-400">Dev</span></h3>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 max-w-md">
@@ -71,7 +71,7 @@ const Footer = () => {
               {navLinks.map((link, index) => (
                 <li key={index}>
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                   >
                     {link.name}

@@ -1,47 +1,31 @@
-# Modern Portfolio Website
+# Yaasiin Dev Portfolio - Next.js
 
-A modern, responsive personal portfolio website built with React.js, featuring smooth animations, dark/light mode toggle, and SEO optimization.
+A modern, responsive portfolio website built with Next.js, showcasing skills, projects, and experience as a full-stack developer.
 
 ## 🚀 Features
 
-- **Modern Design**: Clean, minimalist design with professional typography
-- **Responsive**: Fully responsive across all devices and screen sizes
-- **Dark/Light Mode**: Toggle between dark and light themes with localStorage persistence
-- **Smooth Animations**: Framer Motion animations for enhanced user experience
-- **SEO Optimized**: Meta tags, Open Graph, and Twitter Card support
-- **Performance Optimized**: Lazy loading for components and images
-- **Accessibility**: ARIA labels and keyboard navigation support
-
-## 📋 Sections
-
-- **Home**: Hero section with introduction and call-to-action
-- **About**: Personal information, experience timeline, and background
-- **Skills**: Technical skills with progress bars and technology grid
-- **Projects**: Project showcase with filtering and detailed information
-- **Contact**: Contact form and contact information
+- **Next.js 14** - Latest version with App Router support
+- **Responsive Design** - Works perfectly on all devices
+- **Dark Mode** - Toggle between light and dark themes
+- **Framer Motion** - Smooth animations and transitions
+- **Tailwind CSS** - Modern utility-first CSS framework
+- **SEO Optimized** - Meta tags and structured data
+- **Performance Optimized** - Fast loading and smooth interactions
 
 ## 🛠️ Tech Stack
 
-- **React.js**: Frontend framework
-- **React Router**: Client-side routing
-- **Tailwind CSS**: Utility-first CSS framework
-- **Framer Motion**: Animation library
-- **React Icons**: Icon library
-- **React Helmet Async**: SEO management
+- **Framework:** Next.js 14
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** React Icons (Feather Icons)
+- **Language:** JavaScript/JSX
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (version 14 or higher)
-- npm or yarn
-
-### Installation
+## 📦 Installation
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd portfolio-website
+git clone https://github.com/Yaasiin-15/portfolio-nextjs.git
+cd portfolio-nextjs
 ```
 
 2. Install dependencies:
@@ -49,121 +33,108 @@ cd portfolio-website
 npm install
 ```
 
-3. Start the development server:
+3. Run the development server:
 ```bash
-npm start
+npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🏗️ Build for Production
+
+```bash
+npm run build
+npm start
+```
 
 ## 📁 Project Structure
 
 ```
-src/
-├── components/          # Reusable components
-│   ├── Navbar.js       # Navigation component
-│   ├── Footer.js       # Footer component
-│   └── LoadingSpinner.js # Loading animation
-├── contexts/           # React contexts
-│   └── ThemeContext.js # Theme management
-├── pages/              # Page components
-│   ├── Home.js         # Home page
-│   ├── About.js        # About page
-│   ├── Skills.js       # Skills page
-│   ├── Projects.js     # Projects page
-│   └── Contact.js      # Contact page
-├── App.js              # Main app component
-├── index.js            # Entry point
-└── index.css           # Global styles
+├── pages/
+│   ├── _app.js          # App wrapper with global providers
+│   ├── _document.js     # HTML document structure
+│   ├── index.js         # Home page
+│   ├── about.js         # About page
+│   ├── skills.js        # Skills page
+│   ├── projects.js      # Projects page
+│   └── contact.js       # Contact page
+├── src/
+│   ├── components/      # Reusable components
+│   ├── contexts/        # React contexts (Theme)
+│   └── index.css        # Global styles
+├── public/              # Static assets
+└── tailwind.config.js   # Tailwind configuration
 ```
 
 ## 🎨 Customization
 
-### Personal Information
+### Colors
+Update the color scheme in `tailwind.config.js`:
 
-Update the following files with your information:
+```javascript
+colors: {
+  primary: {
+    // Your custom colors
+  }
+}
+```
 
-1. **Personal Details**: Update name, email, phone, location in:
-   - `src/pages/Home.js`
-   - `src/pages/About.js`
-   - `src/pages/Contact.js`
-   - `src/components/Footer.js`
-
-2. **Social Links**: Update social media URLs in:
-   - `src/pages/Home.js`
-   - `src/pages/Contact.js`
-   - `src/components/Footer.js`
-
-3. **Projects**: Update project information in `src/pages/Projects.js`
-
-4. **Skills**: Update skills and experience in:
-   - `src/pages/Skills.js`
-   - `src/pages/About.js`
+### Content
+- Update personal information in each page component
+- Replace profile image in `public/profile.jpg`
+- Update social links and contact information
+- Modify projects data in `pages/projects.js`
 
 ### Styling
-
-- **Colors**: Modify the color scheme in `tailwind.config.js`
-- **Fonts**: Update font families in `tailwind.config.js`
-- **Animations**: Customize animations in `src/index.css`
-
-### SEO
-
-Update meta tags in:
-- `public/index.html`
-- Each page component using `react-helmet-async`
-
-## 📱 Responsive Design
-
-The website is fully responsive with breakpoints:
-- Mobile: < 768px
-- Tablet: 768px - 1024px
-- Desktop: > 1024px
-
-## 🌙 Dark Mode
-
-The dark mode toggle:
-- Persists user preference in localStorage
-- Respects system preference on first visit
-- Smoothly transitions between themes
-
-## ⚡ Performance Features
-
-- **Lazy Loading**: Components are loaded on demand
-- **Image Optimization**: Lazy loading for project images
-- **Code Splitting**: Automatic code splitting with React Router
-- **Minimal Bundle**: Optimized dependencies
+- Global styles: `src/index.css`
+- Component-specific styles: Tailwind classes in components
+- Dark mode: Handled by ThemeContext
 
 ## 🚀 Deployment
 
-### Build for Production
+### Vercel (Recommended)
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically
 
-```bash
-npm run build
+### Other Platforms
+- **Netlify:** Build command: `npm run build`, Publish directory: `out`
+- **GitHub Pages:** Use `next export` for static export
+
+## 📱 Pages
+
+- **Home** - Hero section with introduction and key stats
+- **About** - Detailed information, experience, and education
+- **Skills** - Technical skills with progress bars
+- **Projects** - Portfolio projects with filtering
+- **Contact** - Contact form and information
+
+## 🔧 Configuration
+
+### Environment Variables
+Create a `.env.local` file for environment-specific variables:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
 ```
 
-### Deploy to Netlify
+### SEO
+Update meta tags in each page's `Head` component and in `pages/_document.js`.
 
-1. Connect your repository to Netlify
-2. Set build command: `npm run build`
-3. Set publish directory: `build`
-
-### Deploy to Vercel
-
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run: `vercel`
-
-## 📝 License
+## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions, issues, and feature requests are welcome!
 
-## 📞 Support
+## 📞 Contact
 
-If you have any questions or need help customizing the portfolio, please open an issue on GitHub.
+- **Email:** yaasiinmohamed990@gmail.com
+- **LinkedIn:** [Yaasiin Mohamuud](https://linkedin.com/in/yaasiin-mohamuud)
+- **GitHub:** [Yaasiin-15](https://github.com/Yaasiin-15)
 
 ---
 
-Made with ❤️ using React and Tailwind CSS 
+Made with ❤️ by Yaasiin Dev
