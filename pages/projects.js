@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FiGithub, FiExternalLink, FiFilter } from 'react-icons/fi';
 
 const Projects = () => {
@@ -233,12 +234,12 @@ const Projects = () => {
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
                 Interested in working together? Let&apos;s discuss your project!
               </p>
-              <a
+              <Link
                 href="/contact"
                 className="btn-primary"
               >
                 Get In Touch
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
