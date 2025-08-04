@@ -153,7 +153,7 @@ const Home = () => {
                 className="grid grid-cols-3 gap-6 mb-12 max-w-2xl lg:max-w-none"
               >
                 <div className="text-center lg:text-left">
-                  <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">4+</div>
+                  <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">2+</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
                 </div>
                 <div className="text-center lg:text-left">
