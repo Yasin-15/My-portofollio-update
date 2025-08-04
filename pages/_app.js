@@ -1,18 +1,15 @@
-import { ThemeProvider } from '../src/contexts/ThemeContext';
-import Navbar from '../src/components/Navbar';
-import Footer from '../src/components/Footer';
 import '../src/index.css';
+import { ThemeProvider } from '../src/contexts/ThemeContext';
+import Layout from '../src/components/Layout';
 
-export default function App({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-dark-900 transition-colors duration-300">
-        <Navbar />
-        <main>
-          <Component {...pageProps} />
-        </main>
-        <Footer />
-      </div>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ThemeProvider>
   );
 }
+
+export default MyApp;

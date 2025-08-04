@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
-    domains: [],
+    domains: ['images.unsplash.com'],
+  },
+  eslint: {
+    ignoreDuringBuilds: false,
   },
 }
 

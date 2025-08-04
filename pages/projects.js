@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
-import Link from 'next/link';
-import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import Image from 'next/image';
+import { FiGithub, FiExternalLink, FiFilter } from 'react-icons/fi';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
@@ -36,8 +36,8 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
       category: 'fullstack',
       tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redux'],
-      github: '#',
-      live: '#',
+      github: 'https://github.com/Yaasiin-15/ecommerce-platform',
+      live: 'https://ecommerce-demo.com',
       featured: true,
     },
     {
@@ -47,8 +47,8 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop',
       category: 'frontend',
       tech: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS', 'Framer Motion'],
-      github: '#',
-      live: '#',
+      github: 'https://github.com/Yaasiin-15/task-manager',
+      live: 'https://task-manager-demo.com',
       featured: true,
     },
     {
@@ -58,8 +58,8 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop',
       category: 'frontend',
       tech: ['React', 'OpenWeather API', 'Chart.js', 'Geolocation API'],
-      github: '#',
-      live: '#',
+      github: 'https://github.com/Yaasiin-15/weather-app',
+      live: 'https://weather-dashboard.com',
       featured: false,
     },
     {
@@ -69,8 +69,8 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop',
       category: 'fullstack',
       tech: ['Next.js', 'PostgreSQL', 'Prisma', 'AWS S3', 'Vercel'],
-      github: '#',
-      live: '#',
+      github: 'https://github.com/Yaasiin-15/blog-cms',
+      live: 'https://blog-cms-demo.com',
       featured: false,
     },
     {
@@ -80,8 +80,8 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1467232004584-a241de8b6a40?w=600&h=400&fit=crop',
       category: 'frontend',
       tech: ['React', 'Tailwind CSS', 'Framer Motion', 'React Router'],
-      github: '#',
-      live: '#',
+      github: 'https://github.com/Yaasiin-15/portfolio',
+      live: 'https://your-portfolio.com',
       featured: false,
     },
     {
@@ -91,8 +91,8 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
       category: 'backend',
       tech: ['Node.js', 'Express', 'Redis', 'Docker', 'JWT'],
-      github: '#',
-      live: '#',
+      github: 'https://github.com/Yaasiin-15/api-gateway',
+      live: 'https://api-gateway-docs.com',
       featured: false,
     },
   ];
@@ -122,6 +122,7 @@ const Projects = () => {
             initial="hidden"
             animate="visible"
           >
+            {/* Header */}
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                 My Projects
@@ -131,6 +132,7 @@ const Projects = () => {
               </p>
             </motion.div>
 
+            {/* Filter Buttons */}
             <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-12">
               {categories.map((category) => (
                 <button
@@ -147,6 +149,7 @@ const Projects = () => {
               ))}
             </motion.div>
 
+            {/* Projects Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <AnimatePresence mode="wait">
                 {filteredProjects.map((project) => (
@@ -159,13 +162,17 @@ const Projects = () => {
                     transition={{ duration: 0.3 }}
                     className="project-card group"
                   >
+                    {/* Project Image */}
                     <div className="relative overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                      />
+                      <div className="relative w-full h-48">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      </div>
                       {project.featured && (
                         <div className="absolute top-4 left-4 bg-primary-600 text-white px-3 py-1 rounded-full text-xs font-medium">
                           Featured
@@ -173,6 +180,7 @@ const Projects = () => {
                       )}
                     </div>
 
+                    {/* Project Content */}
                     <div className="p-6">
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                         {project.title}
@@ -181,6 +189,7 @@ const Projects = () => {
                         {project.description}
                       </p>
 
+                      {/* Tech Stack */}
                       <div className="flex flex-wrap gap-2 mb-6">
                         {project.tech.map((tech, index) => (
                           <span
@@ -192,6 +201,7 @@ const Projects = () => {
                         ))}
                       </div>
 
+                      {/* Project Links */}
                       <div className="flex gap-4">
                         <a
                           href={project.github}
@@ -218,15 +228,17 @@ const Projects = () => {
               </AnimatePresence>
             </div>
 
+            {/* Call to Action */}
             <motion.div variants={itemVariants} className="text-center mt-16">
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-                Interested in working together? Let's discuss your project!
+                Interested in working together? Let&apos;s discuss your project!
               </p>
-              <Link href="/contact">
-                <button className="btn-primary">
-                  Get In Touch
-                </button>
-              </Link>
+              <a
+                href="/contact"
+                className="btn-primary"
+              >
+                Get In Touch
+              </a>
             </motion.div>
           </motion.div>
         </div>

@@ -34,9 +34,7 @@ const Skills = () => {
         { name: 'TypeScript', level: 85 },
         { name: 'HTML5 & CSS3', level: 95 },
         { name: 'Tailwind CSS', level: 90 },
-        { name: 'Figma', level: 80 },
         { name: 'Next.js', level: 80 },
-        { name: 'Bootstrap', level: 80 }
       ],
     },
     {
@@ -47,8 +45,6 @@ const Skills = () => {
         { name: 'Express.js', level: 85 },
         { name: 'Python', level: 75 },
         { name: 'PostgreSQL', level: 80 },
-        { name: 'C#', level: 80 },
-        { name: 'Java', level: 80 },
         { name: 'MongoDB', level: 75 },
         { name: 'REST APIs', level: 90 },
       ],
@@ -99,6 +95,7 @@ const Skills = () => {
             initial="hidden"
             animate="visible"
           >
+            {/* Header */}
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                 Skills & Expertise
@@ -108,6 +105,7 @@ const Skills = () => {
               </p>
             </motion.div>
 
+            {/* Skill Categories */}
             <div className="grid lg:grid-cols-2 gap-8 mb-16">
               {skillCategories.map((category, categoryIndex) => (
                 <motion.div
@@ -148,6 +146,7 @@ const Skills = () => {
               ))}
             </div>
 
+            {/* Technologies Grid */}
             <motion.div variants={itemVariants} className="mb-16">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
                 Technologies I Work With
@@ -170,6 +169,7 @@ const Skills = () => {
               </div>
             </motion.div>
 
+            {/* Additional Skills */}
             <motion.div variants={itemVariants} className="grid md:grid-cols-3 gap-8">
               <div className="text-center p-6 bg-white dark:bg-dark-800 rounded-xl shadow-md">
                 <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">

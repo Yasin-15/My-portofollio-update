@@ -46,6 +46,7 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -55,7 +56,7 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <FiMail className="w-6 h-6" />,
+      icon: <FiMapPin className="w-6 h-6" />,
       title: 'Email',
       value: 'yaasiinmohamed990@gmail.com',
       link: 'mailto:yaasiinmohamed990@gmail.com',
@@ -83,12 +84,12 @@ const Contact = () => {
     {
       icon: <FiLinkedin className="w-6 h-6" />,
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/yaasiin-mohamuud-3a30622b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+      url: 'https://www.linkedin.com/in/yaasiin-mohamuud-3a30622b3',
     },
     {
       icon: <FiTwitter className="w-6 h-6" />,
       name: 'Twitter',
-      url: 'https://twitter.com/yourusername',
+      url: '#',
     },
   ];
 
@@ -106,17 +107,19 @@ const Contact = () => {
             initial="hidden"
             animate="visible"
           >
+            {/* Header */}
             <motion.div variants={itemVariants} className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                 Get In Touch
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                I'm always interested in new opportunities and exciting projects. 
-                Let's discuss how we can work together!
+                I&apos;m always interested in new opportunities and exciting projects. 
+                Let&apos;s discuss how we can work together!
               </p>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-12">
+              {/* Contact Form */}
               <motion.div variants={itemVariants}>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                   Send a Message
@@ -167,7 +170,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white transition-colors duration-200"
-                      placeholder="What's this about?"
+                      placeholder="What&apos;s this about?"
                     />
                   </div>
                   
@@ -199,11 +202,13 @@ const Contact = () => {
                 </form>
               </motion.div>
 
+              {/* Contact Information */}
               <motion.div variants={itemVariants}>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                   Contact Information
                 </h2>
                 
+                {/* Contact Details */}
                 <div className="space-y-6 mb-8">
                   {contactInfo.map((info, index) => (
                     <div key={index} className="flex items-start space-x-4">
@@ -231,6 +236,7 @@ const Contact = () => {
                   ))}
                 </div>
 
+                {/* Social Links */}
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                     Follow Me
@@ -252,13 +258,14 @@ const Contact = () => {
                   </div>
                 </div>
 
+                {/* Additional Info */}
                 <div className="mt-8 p-6 bg-gray-50 dark:bg-dark-800 rounded-xl">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                    Let's Work Together
+                    Let&apos;s Work Together
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    I'm currently available for freelance work and full-time opportunities. 
-                    Whether you have a project in mind or just want to chat, I'd love to hear from you.
+                    I&apos;m currently available for freelance work and full-time opportunities. 
+                    Whether you have a project in mind or just want to chat, I&apos;d love to hear from you.
                   </p>
                   <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                     <p>✅ Available for new projects</p>

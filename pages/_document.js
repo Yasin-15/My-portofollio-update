@@ -12,19 +12,19 @@ export default function Document() {
           content="Professional portfolio showcasing skills, projects, and experience as a full-stack developer"
         />
         <meta name="keywords" content="developer, portfolio, react, javascript, full-stack, web development" />
-        <meta name="author" content="Yaasiin Mohamuud" />
+        <meta name="author" content="Yaasiin Dev" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://your-portfolio.com/" />
-        <meta property="og:title" content="Yaasiin Mohamuud - Full Stack Developer" />
+        <meta property="og:title" content="Yaasiin Dev - Full Stack Developer" />
         <meta property="og:description" content="Professional portfolio showcasing skills, projects, and experience as a full-stack developer" />
         <meta property="og:image" content="/og-image.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://your-portfolio.com/" />
-        <meta property="twitter:title" content="Yaasiin Mohamuud - Full Stack Developer" />
+        <meta property="twitter:title" content="Yaasiin Dev - Full Stack Developer" />
         <meta property="twitter:description" content="Professional portfolio showcasing skills, projects, and experience as a full-stack developer" />
         <meta property="twitter:image" content="/og-image.jpg" />
         
@@ -33,7 +33,7 @@ export default function Document() {
         
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Head>
       <body>

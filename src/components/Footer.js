@@ -15,7 +15,7 @@ const Footer = () => {
     {
       icon: <FiLinkedin className="w-5 h-5" />,
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/yaasiin-mohamuud-3a30622b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
+      url: 'https://www.linkedin.com/in/yaasiin-mohamuud-3a30622b3',
     },
     {
       icon: <FiTwitter className="w-5 h-5" />,
@@ -33,17 +33,16 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white dark:bg-dark-900 border-t border-gray-200 dark:border-gray-800">
+    <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
       <div className="container-custom py-12">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
             <Link href="/" className="inline-block">
-              <h3 className="text-2xl font-bold gradient-text">Yaasiin <span className="text-cyan-500 dark:text-primary-400">Dev</span></h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">Yaasiin <span className="text-primary-600 dark:text-primary-400">Dev</span></h3>
             </Link>
-            <p className="text-gray-600 dark:text-gray-400 max-w-md">
-              Full-stack developer passionate about creating innovative digital solutions 
-              and exceptional user experiences.
+            <p className="text-gray-600 dark:text-gray-400 max-w-md text-sm leading-relaxed">
+              Professional full-stack developer specializing in modern web technologies and scalable solutions.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -52,8 +51,8 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="social-link"
+                  whileHover={{ scale: 1.05 }}
+                  className="social-link p-2 rounded-lg bg-white dark:bg-gray-800 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-200"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -72,7 +71,7 @@ const Footer = () => {
                 <li key={index}>
                   <Link
                     href={link.path}
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                    className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -84,9 +83,9 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              Get In Touch
+              Contact Information
             </h4>
-            <div className="space-y-2 text-gray-600 dark:text-gray-400">
+            <div className="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
               <p>yaasiinmohamed990@gmail.com</p>
               <p>+252 (615) 588696</p>
               <p>Mogadishu, Somalia</p>
@@ -100,7 +99,7 @@ const Footer = () => {
             © {currentYear} Yaasiin Dev. All rights reserved.
           </p>
           <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center mt-4 md:mt-0">
-            Made By <FiHeart className="w-4 h-4 mx-1 text-red-500" /> Yaasiin Dev
+            Built with <FiHeart className="w-4 h-4 mx-1 text-red-500" /> using Next.js & Tailwind CSS
           </p>
         </div>
       </div>
