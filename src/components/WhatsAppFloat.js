@@ -6,7 +6,7 @@ const WhatsAppFloat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
 
-  const phoneNumber = '252615588696'; // Your WhatsApp number
+  const phoneNumber = '252684447931'; // Your WhatsApp number
   const defaultMessage = 'Hello Yaasiin! I found your portfolio and would like to connect.';
 
   const handleSendMessage = () => {

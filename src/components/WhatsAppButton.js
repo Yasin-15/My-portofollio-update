@@ -7,7 +7,7 @@ const WhatsAppButton = ({
   size = "md",
   variant = "primary"
 }) => {
-  const phoneNumber = '252615588696';
+  const phoneNumber = '252684447931';
   
   const handleClick = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
