@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
+import { FiPhone, FiMapPin, FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
+import { HiMail } from 'react-icons/hi';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -56,7 +58,7 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <FiMapPin className="w-6 h-6" />,
+      icon: <HiMail className="w-6 h-6" />,
       title: 'Email',
       value: 'yaasiinmohamed990@gmail.com',
       link: 'mailto:yaasiinmohamed990@gmail.com',
@@ -66,6 +68,12 @@ const Contact = () => {
       title: 'Phone',
       value: '+252 (615) 588696',
       link: 'tel:+252615588696',
+    },
+    {
+      icon: <FaWhatsapp className="w-6 h-6" />,
+      title: 'WhatsApp',
+      value: '+252 615 588696',
+      link: 'https://wa.me/252615588696?text=Hello%20Yaasiin!%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect.',
     },
     {
       icon: <FiMapPin className="w-6 h-6" />,
